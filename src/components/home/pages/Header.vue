@@ -12,53 +12,58 @@
       输入城市/景点/游玩主题
     </div>
     <div class="header-right">
-      北京<span class="iconfont">&#xe604;</span>
+      <router-link to="/city">{{city}}<span class="iconfont">&#xe604;</span></router-link>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-
-}
+  import {mapState} from 'vuex'
+  export default {
+    computed:{
+      ...mapState(['city'])
+    }
+  }
 </script>
 
 <style scoped lang="stylus">
-@import "~stylus/var.styl"
-.header {
-  display: flex;
-  width: 100%;
-  height: .88rem;
+  @import "~stylus/var.styl"
+  .header {
+    display: flex;
+    width: 100%;
+    height: .88rem;
+    font-size: .36rem;
+    line-height: .88rem;
+    color: $textColor;
+    background: $bgColor;
+  }
 
-  font-size:.36rem;
-  line-height:.88rem;
+  .header-left {
+    width: .4rem;
+    padding: 0 .2rem;
+    text-align: center;
+    font-weight: bold;
+  }
 
-  color: $textColor;
-  background: $bgColor;
-}
-.header-left {
-  width:.4rem;
-  padding: 0 .2rem;
+  .header-search {
+    flex: 1;
+    height: .6rem;
+    padding-left: .2rem;
+    margin: .14rem 0;
+    border-radius: .1rem;
+    line-height: .6rem;
+    font-size: .28rem;
+    color: #e4e7ea;
+    background: #fff;
+    cursor pointer;
+  }
 
-  text-align: center;
-  font-weight: bold;
-}
-.header-search {
-  flex:1;
-  height: .6rem;
-  padding-left: .2rem;
-  margin: .14rem 0;
-  border-radius: .1rem;
+  .header-right {
+    padding: 0 .2rem;
+    font-size: .28rem;
+  }
 
-  line-height: .6rem;
-  font-size: .28rem;
-
-  color: #e4e7ea;
-  background: #fff;
-}
-.header-right {
-  padding:0 .2rem;
-
-  font-size: .28rem;
-}
+  .header-right a {
+    color: #fff;
+  }
 </style>

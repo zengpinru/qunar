@@ -1,0 +1,4 @@
+vue-awesome-swiper
+axios
+better-scroll
+vuex
