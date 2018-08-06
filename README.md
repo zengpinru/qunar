@@ -1,4 +1,4 @@
-# 仿去哪儿webapp,还更新。。。
+# 仿去哪儿webapp,还在更新。。。
 
 > A Vue.js project
 
