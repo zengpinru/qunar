@@ -4,7 +4,7 @@
       <img src="http://img1.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png" alt="">猜你喜欢
     </div>
     <ul>
-      <li class="like-item border-bottom" v-for="(item,index) in likeList" :key="index">
+      <li class="like-item border-bottom" v-for="(item,index) in likeList" :key="index" @click="toDetail">
         <div class="like-img">
           <img :src="item.imgUrl" :alt="item.title">
         </div>
@@ -32,7 +32,12 @@
 
       };
     },
-    props:['likeList']
+    props:['likeList'],
+    methods: {
+      toDetail () {
+        this.$router.push('/detail');
+      }
+    }
   }
 </script>
 
